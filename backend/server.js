@@ -6,12 +6,14 @@ const connectDB = require('./config/db');  // Import the MongoDB connection logi
 const Compiler = require('./controllers/compiler.controller');  // Import the Compiler controller
 const Complexity = require('./controllers/complexity.controller');  // Import the Complexity controller
 
+const bodyParser = require("body-parser");
 // Load environment variables from .env file
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const visualizationRoute = require("./routes/visualization");
 // Middleware
 app.use(cors({
   origin: 'http://localhost:5173',  // Frontend runs on port 5173
@@ -25,6 +27,9 @@ connectDB();  // Call the function to connect to the database
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+
+app.use(bodyParser.json());
+app.use("/api/visualization", visualizationRoute);
 
 // Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
