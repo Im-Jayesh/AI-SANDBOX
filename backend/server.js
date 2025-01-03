@@ -1,9 +1,10 @@
 // src/server.js
-
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');  // Import the MongoDB connection logic
+const Compiler = require('./controllers/compiler.controller');  // Import the Compiler controller
+const Complexity = require('./controllers/complexity.controller');  // Import the Complexity controller
 
 // Load environment variables from .env file
 dotenv.config();
