@@ -1,145 +1,118 @@
-# AI-Sandbox
+# Clowder  
 
-AI-Sandbox is a MERN stack application designed as a comprehensive coding platform. It provides features like real-time code visualization, time/space complexity analysis, a practice zone for coding questions, AI-powered real-time coding suggestions, and a reward system for solving coding challenges.
-
-## Features
-- **Home Page**: Overview of features.
-- **Compiler**: A built-in online code editor with real-time AI suggestions.
-- **Profile**: User management and progress tracking.
-- **Reward System**: Users earn points and coupons based on performance.
-
-## Tech Stack
-### Frontend:
-- React.js
-- HTML/CSS
-- JavaScript
-
-### Backend:
-- Node.js
-- Express.js
-- MongoDB
-
-### AI Integration:
-- AI tools for real-time suggestions (e.g., ChatGPT or Gamma AI).
+Clowder is an innovative e-learning platform developed using the MERN stack, designed to transform education through personalized learning experiences powered by AI. It offers features like chapter-based adaptive testing, AI-driven support, real-time code analysis, and motivational tools to enhance student engagement.  
 
 ---
 
-## Project Structure
-```
-AI-Sandbox/
-|-- backend/
-|   |-- config/
-|   |   |-- db.js
-|   |-- controllers/
-|   |   |-- auth.controller.js
-|   |   |-- compiler.controller.js
-|   |-- models/
-|   |   |-- user.js
-|   |-- routes/
-|       |-- auth.js
-|       |-- compiler.js
-|-- .env
-|-- server.js
-|-- frontend/
-    |-- node_modules/
-    |-- public/
-    |-- src/
-        |-- api/
-        |   |-- api.js
-        |-- assets/
-        |   |-- css/
-        |-- components/
-        |-- pages/
-        |-- services/
-        |-- App.jsx
-        |-- main.jsx
-    |-- index.html
-    |-- .env
-    |-- .gitignore
-```
+## Features  
+- **Personalized Learning**: Adaptive tests tailored to skill levels, focusing on weak areas before progressing.  
+- **AI Compiler**: Analyze code complexity, visualize execution, and receive real-time AI suggestions.  
+- **Student Progress Tracking**: Keep track of completed tests, scores, and areas of improvement.  
+- **Community Engagement**: Collaborative learning through discussion boards and peer reviews.  
+- **Reward System**: Earn points, badges, and exclusive content for consistent performance.  
 
 ---
 
-## Installation
+## Tech Stack  
 
-### Prerequisites
-- Node.js
-- MongoDB
-- Git
+### **Frontend**  
+- React.js  
+- HTML/CSS  
+- JavaScript  
 
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/AdarshKumarSr/AI-SANDBOX.git
-   ```
+### **Backend**  
+- Node.js  
+- Express.js  
+- MongoDB  
 
-2. Navigate to the project directory:
-   ```bash
-   cd AI-Sandbox
-   ```
+### **AI Integration**  
+- AI tools for suggestions and learning optimization (e.g., ChatGPT, Gamma AI).  
 
-3. Set up the backend:
-   ```bash
-   cd backend
-   npm install
-   ```
-
-4. Configure environment variables:
-   - Create a `.env` file in the `backend/` directory and add the following:
-     ```env
-     MONGO_URI=your-mongodb-uri
-     JWT_SECRET=your-secret-key
-     ```
-
-5. Start the backend server:
-   ```bash
-   node server.js
-   ```
-
-6. Set up the frontend:
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-7. Start the frontend application:
-   ```bash
-   npm run dev
-   ```
 
 ---
 
-## Usage
-1. Open your browser and navigate to `http://localhost:3000`.
-2. Register or log in to start using the platform.
-3. Explore the Home, Compiler, and Profile sections.
+## Installation  
+
+### Prerequisites  
+- Node.js  
+- MongoDB  
+- Git  
+
+### Steps  
+1. **Clone the Repository:**  
+   ```bash  
+   git clone https://github.com/AdarshKumarSr/Clowder.git  
+   ```  
+
+2. **Navigate to the Project Directory:**  
+   ```bash  
+   cd Clowder  
+   ```  
+
+3. **Set Up the Backend:**  
+   ```bash  
+   cd backend  
+   npm install  
+   ```  
+
+4. **Configure Environment Variables:**  
+   - Create a `.env` file in the `backend/` directory and add:  
+     ```env  
+     MONGO_URI=your-mongodb-uri  
+     JWT_SECRET=your-secret-key  
+     ```  
+
+5. **Start the Backend Server:**  
+   ```bash  
+   node server.js  
+   ```  
+
+6. **Set Up the Frontend:**  
+   ```bash  
+   cd ../frontend  
+   npm install  
+   ```  
+
+7. **Start the Frontend Application:**  
+   ```bash  
+   npm run dev  
+   ```  
 
 ---
 
-## Contribution
-1. Fork the repository.
-2. Create a new branch for your feature:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add your message here"
-   ```
-4. Push the changes to your fork:
-   ```bash
-   git push origin feature-name
-   ```
-5. Create a pull request to the main repository.
+## Usage  
+1. Open your browser and navigate to `http://localhost:3000`.  
+2. Register or log in to access the platform.  
+3. Explore learning modules, take adaptive tests, and track your progress.  
 
 ---
 
-## License
-This project is licensed under the MIT License.
+## Contribution  
+
+1. Fork the repository.  
+2. Create a feature branch:  
+   ```bash  
+   git checkout -b feature-name  
+   ```  
+3. Commit your changes:  
+   ```bash  
+   git commit -m "Your message"  
+   ```  
+4. Push to your branch:  
+   ```bash  
+   git push origin feature-name  
+   ```  
+5. Create a pull request to the main repository.  
 
 ---
 
-## Contact
-- **Developer**: Adarsh Kumar
-- **Email**: srivastavaadarsh084@gmail.com
+## License  
+This project is licensed under the MIT License.  
 
+---
+
+## Contact  
+- **Developer**: Adarsh Kumar  
+- **Email**: srivastavaadarsh084@gmail.com  
+
+---  
