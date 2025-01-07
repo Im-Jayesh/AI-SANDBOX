@@ -91,3 +91,7 @@ pre {
     cursor: not-allowed;
   }
   
+  .ace_gutter-cell.highlighted-line {
+    background-color: rgba(233, 255, 254, 0.322); /* Yellow background */
+  }
+  
