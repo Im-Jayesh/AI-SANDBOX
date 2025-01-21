@@ -3,6 +3,7 @@ import '../assets/css/Home.css';
 import '../assets/css/nav.css';
 import '../assets/css/page.css';
 import Nav from '../components/Nav';
+import { useNavigate } from 'react-router-dom';
 
 // Import assets
 import Heading from '../assets/heading.png';
@@ -25,6 +26,8 @@ import i12 from '../assets/i12.png';
 import i13 from '../assets/i13.png';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
     
@@ -44,7 +47,7 @@ const Home = () => {
             <img src={Heading3} alt="" />
           </div>
           <div className="btn1">
-            <button id="1"><b>Slay here</b></button>
+            <button id="1" onClick={() => navigate('/login')}><b>Slay here</b></button>
           </div>
         </div>
       </div>
@@ -91,7 +94,7 @@ const Home = () => {
           <div><img className="i12" src={i12} alt="" /></div>
           <div><img className="i13" src={i13} alt="" /></div>
           <div className="btn2">
-            <button id="2"><b>Just click Bruh!</b></button>
+            <button id="2" onClick={() => navigate('/login')}><b>Just click Bruh!</b></button>
           </div>
         </div>
       </div>
