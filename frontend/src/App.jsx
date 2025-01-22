@@ -10,11 +10,12 @@ import Nav from './components/Nav'; // Importing Nav component
 import Footer from './components/Footer'; // Importing Footer component
 import CP_Compiler from './pages/CP_Compiler';
 import DSA_Page from './pages/DSA';
+import "../src/assets/css/main.css"
 
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className='main'>
         <Nav /> {/* Navigation bar */}
 
         <Routes>
