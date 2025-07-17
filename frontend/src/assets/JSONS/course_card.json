@@ -1,0 +1,30 @@
+[
+  {
+    "courseId": "DSA101",
+    "courseName": "Introduction to Data Structures & Algorithms",
+    "description": "A beginner-friendly deep dive into core data structures and algorithmic thinking.",
+    "instructor": {
+      "name": "Jayesh Suthar",
+      "about_instructor": "Senior Computer Engineering student who’s hands-on with teaching DSA.",
+      "links": [
+        { "type": "GitHub", "url": "https://github.com/Im-Jayesh" },
+        { "type": "LinkedIn", "url": "https://www.linkedin.com/in/jayesh-suthar-07a1322b5/" },
+        { "type": "Instagram", "url": "https://www.instagram.com/im__jayesh_/" }
+      ]
+    }
+  },
+  {
+    "courseId": "REACT201",
+    "courseName": "Modern React Development",
+    "description": "Master React fundamentals, hooks, context, and building scalable UIs.",
+    "instructor": {
+      "name": "Priya Shah",
+      "about_instructor": "Frontend engineer passionate about clean, intuitive web interfaces.",
+      "links": [
+        { "type": "GitHub", "url": "https://github.com/PriyaShah" },
+        { "type": "Twitter", "url": "https://twitter.com/PriyaShah_dev" },
+        { "type": "Instagram", "url": "https://www.instagram.com/priyadev_ui/" }
+      ]
+    }
+  }
+]

@@ -1,0 +1,68 @@
+
+[
+  {
+    "courseId": "DSA101",
+    "lessons": {
+      "1": [
+        {
+          "page_no": 1,
+          "heading": "What are Data Structures and Algorithms?",
+          "content": [
+            "DSA stands for Data Structures and Algorithms, which are fundamental concepts in computer science. Data Structures are ways to organize and store data efficiently, while Algorithms are step-by-step procedures or formulas for solving problems.",
+            "Understanding DSA is crucial for writing efficient code and solving complex problems. It helps in optimizing performance and resource utilization in software development.",
+            "https://tse3.mm.bing.net/th/id/OIP.RxgTmNvUs4q0hfu5EME-QwHaDx?rs=1&pid=ImgDetMain&o=7&rm=3",
+            "In this course, we will explore various data structures such as arrays, linked lists, stacks, queues, trees, and graphs. We will also cover algorithms for searching, sorting, and traversing these data structures."
+          ]
+        },
+        {
+          "page_no": 2,
+          "heading": "Why Learn Data Structures and Algorithms?",
+          "content": [
+            "Learning DSA is essential for anyone looking to excel in programming and software development. It enhances problem-solving skills and enables developers to write efficient code.",
+            "Many technical interviews focus on DSA concepts, making it a crucial area of study for aspiring software engineers.",
+            "By mastering DSA, you will be able to tackle complex coding challenges and improve your overall programming proficiency."
+          ]
+        },
+        {
+          "page_no": 3,
+          "heading": "Example: Find Max in Array",
+          "content": [
+            "Here is an example of a simple algorithm to find the maximum number in an array:",
+            "```def find_max(arr):\n\tmax_num = arr[0]\n\tfor num in arr:\n\t\tif num > max_num:\n\t\t\tmax_num = num\n\treturn max_num\n```",
+            "This algorithm iterates through the array and keeps track of the maximum number found so far. It has a time complexity of O(n), where n is the number of elements in the array.",
+            "https://th.bing.com/th/id/OIP.hF9OteN_EnKpABZl1aHGIwHaDP?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+          ]
+        }
+      ],
+      "2": [
+    {
+      "page_no": 1,
+      "heading": "Esoteric Structures: Skip Lists & Cuckoo Filters",
+      "content": [
+        "🔥 **Skip List** – like a linked list on performance-enhancing meds. Multiple layers act as express lanes: items bubble up probabilistically, giving O(log n) search time on average :contentReference[oaicite:1]{index=1}.",
+        "🧠 **Cuckoo Filter** – a Bloom filter’s cooler sibling with deletion powers. Stores fingerprints with clever swaps—smarter than Bloom when you need clean-up capabilities :contentReference[oaicite:2]{index=2}."
+      ]
+    },
+    {
+      "page_no": 2,
+      "heading": "Bloom Filters: Compact but Confident",
+      "content": [
+        "Bit arrays plus multiple hashes = lightning‑fast membership tests. Guarantees no false negatives, but occasional false positives—a sweet trade for space efficiency :contentReference[oaicite:3]{index=3}.",
+        "Think millions of items? With just ~10 bits per item, you can quickly check if something definitely isn’t in the set, or maybe is—perfect when speed trumps perfection."
+      ]
+    },
+    {
+      "page_no": 3,
+      "heading": "Why It’s Spicy",
+      "content": [
+        "Skip Lists use coin flips to decide who gets to ride the express lanes—randomness makes them elegantly simple and fast.",
+        "Cuckoo Filters let you remove elements without turning the structure upside-down—no need to rebuild the whole filter.",
+        "Bloom Filters are ultra-slim, ultra-quick, and ideal for first-pass tests in big-data systems—false positives are the price of efficiency."
+      ]
+    }
+  ]
+    }
+  }
+]
+
+
