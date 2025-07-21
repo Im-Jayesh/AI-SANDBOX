@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ArcherContainer, ArcherElement } from "react-archer";
 import DictComponent from "./Dict_component";
 
-// Process the input 
 const processInput = (input) => {
   if (!input || !Array.isArray(input)) return [];
   return input;
@@ -17,17 +16,20 @@ const ListComponent = ({ input = [] }) => {
 
   return (
     <ArcherContainer strokeColor="black">
-      <div style={{ display: "flex", alignItems: "flex-start" }}>
-        {/* Left Column: Main Table */}
+      <div className="flex items-start">
+        {/* Left Column: Table */}
         <div>
-          <p style={{ margin: "2px" }}>List</p>
-          <table style={{ borderCollapse: "collapse" }}>
+          <p className="text-gray-400 text-sm mb-2">List</p>
+          <table>
             <tbody>
-              <tr>
+              <tr style={{display:"flex", margin:"-0.2px"}}>
                 {data.map((item, idx) => (
-                  <td key={idx} style={{ border: "1px solid #aaa", padding: "5px" }}>
+                  <td
+                    key={idx} 
+                    className="bg-gray-800 text-[#C084FC] text-center font-mono mx-1 rounded-md animate-scaleFadeIn shadow-md"
+                    style={{ padding: "15px"}}
+                  >
                     {typeof item === "object" && item !== null ? (
-                      // Wrap object with ArcherElement to create a clickable label with arrow
                       <ArcherElement
                         id={`source-${idx}`}
                         relations={[
@@ -39,18 +41,18 @@ const ListComponent = ({ input = [] }) => {
                           },
                         ]}
                       >
-                        <span style={{ textDecoration: "underline", cursor: "pointer" }}>
-                          {idx} <br/>
+                        <span className="underline cursor-pointer">
+                          {idx}
+                          <br />
                           [Object]
                         </span>
                       </ArcherElement>
                     ) : (
-                      // Render primitive values directly
                       <div>
-<span style={{color:"grey", fontSize:"13px"}}>{idx}</span> <br/>
-{String(item)}
+                        <span className="text-gray-400 text-xs">{idx}</span>
+                        <br />
+                        {String(item)}
                       </div>
-                      
                     )}
                   </td>
                 ))}
@@ -59,19 +61,12 @@ const ListComponent = ({ input = [] }) => {
           </table>
         </div>
 
-        {/* Right Column: Render nested objects */}
-        <div style={{ marginLeft: "50px" }}>
+        {/* Right Column: Nested Objects */}
+        <div className="ml-12">
           {data.map((item, idx) =>
             typeof item === "object" && item !== null ? (
               <ArcherElement id={`child-${idx}`} key={`child-${idx}`}>
-                <div
-                  style={{
-                    padding: "10px",
-                    border: "1px solid #aaa",
-                    backgroundColor: "#fff",
-                    marginBottom: "20px",
-                  }}
-                >
+                <div className="p-4 border border-gray-400 bg-white mb-5 rounded-md shadow">
                   <DictComponent input={item} />
                 </div>
               </ArcherElement>

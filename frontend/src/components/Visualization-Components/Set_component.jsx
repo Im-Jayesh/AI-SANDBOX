@@ -1,41 +1,35 @@
-// python set component
-
-const StrToSet = (input_str) => {
-  return input_str
-    .trim()
-    .slice(1, input_str.length - 1)
-    .split(",")
-    .map((item) => item.trim().replace(/^'|'$/g, ""));
-};
+import React from "react";
 
 const SetComponent = ({ input }) => {
-  const result = StrToSet(input);
+  const result = input;
   const rows = Math.ceil(Math.sqrt(result.length)); // Auto-calculate rows
   const cols = Math.ceil(result.length / rows); // Auto-calculate columns
 
-  // Convert flat array into a 2D array for the table
   const tableData = Array.from({ length: rows }, (_, rowIndex) =>
     result.slice(rowIndex * cols, (rowIndex + 1) * cols)
   );
 
   return (
-    <div style={{ marginTop: "10px", textAlign: "left" }}>
-      <p style={{ margin: "2px" }}>set</p>
-      <table style={{ borderCollapse: "collapse" }}>
-        <tbody>
-          {tableData.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {row.map((value, colIndex) => (
-                <td key={colIndex} style={{ border: "1px solid #aaa", padding: "5px", fontSize: "14px" }}>
-                  <div style={{ textAlign: "center" }}>
-                    <span>{value}</span>
-                  </div>
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="text-left mt-2">
+      <p className="mb-1 text-lg text-gray-400 font-semibold">set</p>
+      <div className="bg-gray-800 rounded-md py-6 px-[-5px] animate-scaleFadeIn max-w-fit">
+        <table className="border-separate border-spacing-0 text-sm w-fit min-w-[180px]">
+          <tbody>
+            {tableData.map((row, rowIndex) => (
+              <tr key={rowIndex} className="border border-gray-600 hover:bg-gray-700 transition-colors ">
+                {row.map((value, colIndex) => (
+                  <td
+                    key={colIndex}
+                    className="border border-gray-600 text-[#C084FC] text-center"
+                  >
+                    {String(value)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

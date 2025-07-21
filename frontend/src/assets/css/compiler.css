@@ -120,14 +120,16 @@ html {
     border-radius: 2px;
     background-color: rgb(59, 59, 59);
     align-content: center;
-    justify-content: center;
+    /* justify-content: center; */
     padding-left: 15px;
+    display: flex;
+
 }
 
 .run-btn {
     width: 49px;
     height: 53px;
-    padding-top: 12px;
+    padding: 3px 3px;
 }
 
 .run-btn:hover {

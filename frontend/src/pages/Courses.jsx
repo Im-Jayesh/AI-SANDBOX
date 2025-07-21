@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import CourseCards from "../assets/JSONS/course_card.json";
+import Nav from "../components/Nav";
 
 const Courses = () => (
   <div className="min-h-screen bg-gray-100 pt-20 px-4">
+    <Nav />
     <h1 className="text-4xl font-bold text-gray-900 mb-10">Available Courses</h1>
     <div className="grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
       {CourseCards.map((c) => (

@@ -1,0 +1,36 @@
+{
+    "title": "Quiz Component",
+    "description": "A React component for rendering quizzes.",
+    "difficulty": "easy",
+    "tags": ["python", "DSA"],
+    "questions" : [
+        {
+            "question": "What is the purpose of the Quiz component?",
+            "options": [
+                "To render quizzes",
+                "To handle user authentication",
+                "To display course content"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What is the expected input for the Quiz component?",
+            "options": [
+                "A quiz object",
+                "A user object",
+                "A course object"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "How does the Quiz component handle user interactions?",
+            "options": [
+                "By using state and event handlers",
+                "By making API calls",
+                "By rendering static content"
+            ],
+            "answer": 0
+        }
+    ]
+
+}

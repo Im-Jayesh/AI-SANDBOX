@@ -1,5 +1,4 @@
 /* Page layout */
-@import "tailwindcss";
 .main-container {
     display: flex;
     height: 100vh;
@@ -18,7 +17,7 @@
   
   /* Right side (Visualization) */
   .visualization {
-    width: 45%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,4 +88,8 @@
     border-radius: 10px;
   }
   
-  
+  /* styles.css or visualization.css */
+.ace_gutter-cell.lilac-gutter-highlight {
+  background-color: #b8434b !important;
+  color: black !important;
+}

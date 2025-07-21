@@ -1,33 +1,30 @@
-// the local vars table
-import "../../assets/css/local-frame.css";
 import { ArcherContainer, ArcherElement } from "react-archer";
 import DictComponent from "./Dict_component";
 import ListComponent from "./List_component";
 import SetComponent from "./Set_component";
 import TuplesComponent from "./Tuples_component";
 import PythonObjectVisualizer from "./PythonObjectVisualizer";
+import "../../assets/css/local-frame.css"; // Ensure you have the correct path to your CSS
 
 const LocalFrameComponent = ({ step }) => {
-  const local_vars = step.local_vars || [];
-  const primary_types = [
-    "str",
-    "bool",
-    "float",
-    "int",
-    "char"
-  ];
+  const local_vars = step?.local_vars || [];
 
-  // Filter out the non-primary (complex) variables.
+  const primary_types = ["str", "bool", "float", "int", "char"];
+
   const complexVars = local_vars.filter(
-    (element) => !primary_types.includes(element.type)
+    (element) =>
+      element &&
+      !primary_types.includes(element.type) &&
+      element.value !== null &&
+      typeof element.value === "object"
   );
 
   return (
     <ArcherContainer strokeColor="black" strokeWidth={1}>
       <div className="local-frame-container">
         {/* Left side: Main table with all variables */}
-        <div className="local-frame-left">
-          <h2>Local Variables</h2>
+        <div className="local-frame-left relative top-0">
+          <h2 className="relative top-0">Local Variables</h2>
           <table className="local-frame-table">
             <thead>
               <tr>
@@ -38,6 +35,8 @@ const LocalFrameComponent = ({ step }) => {
             <tbody>
               {local_vars.length > 0 ? (
                 local_vars.map((element, index) => {
+                  if (!element) return null;
+
                   const isPrimary = primary_types.includes(element.type);
                   if (isPrimary) {
                     return (
@@ -46,12 +45,11 @@ const LocalFrameComponent = ({ step }) => {
                         <td>
                           {element.type === "str"
                             ? `"${element.value}"`
-                            : element.value.toString()}
+                            : String(element.value)}
                         </td>
                       </tr>
                     );
                   } else {
-                    // Determine the index within the complex variables list.
                     const complexIndex = complexVars.findIndex(
                       (item) => item === element
                     );
@@ -65,8 +63,8 @@ const LocalFrameComponent = ({ step }) => {
                               {
                                 targetId: `arrow-target-${complexIndex}`,
                                 targetAnchor: "left",
-                                sourceAnchor: "right"
-                              }
+                                sourceAnchor: "right",
+                              },
                             ]}
                           >
                             <div className="complex-arrow">•</div>
@@ -88,10 +86,12 @@ const LocalFrameComponent = ({ step }) => {
         {/* Right side: Complex values table */}
         <div className="local-frame-right">
           {complexVars.length > 0 && (
-            <>
-              <table className="complex-values-table">
-                <tbody>
-                  {complexVars.map((element, idx) => (
+            <table className="complex-values-table">
+              <tbody>
+                {complexVars.map((element, idx) => {
+                  if (!element || typeof element.value !== "object") return null;
+
+                  return (
                     <tr key={idx}>
                       <td>
                         <ArcherElement id={`arrow-target-${idx}`}>
@@ -105,17 +105,19 @@ const LocalFrameComponent = ({ step }) => {
                             ) : element.type === "tuple" ? (
                               <TuplesComponent input={element.value} />
                             ) : (
-                              // JSON.stringify(element.value)
-                              (<PythonObjectVisualizer data={element.value} type={element.type}/>)
+                              <PythonObjectVisualizer
+                                data={element.value}
+                                type={element.type}
+                              />
                             )}
                           </div>
                         </ArcherElement>
                       </td>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </>
+                  );
+                })}
+              </tbody>
+            </table>
           )}
         </div>
       </div>

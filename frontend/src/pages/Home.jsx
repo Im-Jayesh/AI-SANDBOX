@@ -29,6 +29,8 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
+    <>
+    <Nav />
     <div className="home-container">
     
       {/* Page 1 */}
@@ -101,6 +103,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

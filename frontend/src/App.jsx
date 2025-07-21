@@ -13,12 +13,14 @@ import DSA_Page from './pages/Courses';
 import "../src/assets/css/main.css"
 import RenderCourse from './pages/RenderCourse';
 import LessonsList from './pages/LessonsList';
+import Quiz from './components/Quiz';
+import quiz from './assets/JSONS/quiz.json'; // Assuming you have a quiz JSON file
 
 const App = () => {
   return (
     <Router>
       <div className='main'>
-        <Nav /> {/* Navigation bar */}
+        {/* Navigation bar */}
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -28,8 +30,9 @@ const App = () => {
           <Route path="/compiler" element={<Compiler />} />
           <Route path="/cp_compiler/:problem_no" element={<CP_Compiler />} />
           <Route path='/courses' element={<DSA_Page />} />
-          <Route path='/lesson/:lessonId' element={<RenderCourse />} />
+          <Route path="/lesson/:lessonId" element={<RenderCourse />} />
           <Route path="/lessons/:courseId" element={<LessonsList />} />
+          <Route path="/quiz/:courseId" element={<Quiz/>} />
           {/* Add more routes as needed */} 
         </Routes>
 

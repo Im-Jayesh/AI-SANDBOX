@@ -1,48 +1,34 @@
-// python tuple component
+import React from "react";
 
-const parseTuple = (input) => {
-  if (!input || typeof input !== "string") return [];
-
-  console.log("Raw Tuple Input:", input); // Debugging
-
-  // Convert "(1, 2, 3)" to a valid JSON-like "[1, 2, 3]"
-  const formatted = input
-    .replace(/'/g, '"') // Convert single quotes to double quotes
-    .replace(/^\(/, "[") // Change ( to [
-    .replace(/\)$/, "]"); // Change ) to ]
-
-  try {
-    return JSON.parse(formatted); // Convert to an array
-  } catch (error) {
-    console.error("Error parsing tuple:", error, "Input:", input);
-    return [];
-  }
-};
-
-const TuplesComponent = ({ input = "()" }) => {
-  const values = parseTuple(input);
+const TuplesComponent = ({ input = [] }) => {
+  const values = input;
 
   return (
-    <div style={{ marginTop: "10px", textAlign: "left" }}>
-      <p style={{ margin: "2px" }}>tuple</p>
+    <div className="text-left mt-2">
+      <p className="mb-1 text-lg text-gray-400 font-semibold">tuple</p>
       {values.length > 0 ? (
-        <table style={{ borderCollapse: "collapse" }}>
-          <tbody>
-            <tr>
-              {values.map((value, index) => (
-                <td key={index} style={{ border: "1px solid #aaa", padding: "5px", fontSize: "14px" }}>
-                  <div style={{ textAlign: "center" }}>
-                    <span style={{ color: "#666", fontSize: "12px" }}>{index}</span>
-                    <br />
-                    <span>{JSON.stringify(value)}</span>
-                  </div>
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
+        <div className="bg-gray-800 rounded-md px-3 py-3 animate-scaleFadeIn max-w-fit">
+          <table className="border-separate border-spacing-0 text-sm w-fit min-w-[180px]">
+            <tbody>
+              <tr>
+                {values.map((value, index) => (
+                  <td
+                    key={index}
+                    className="border border-gray-600 px-3 py-1 text-white text-center"
+                  >
+                    <div>
+                      <span className="text-xs text-gray-400">{index}</span>
+                      <br />
+                      <span className="text-[#C084FC]">{JSON.stringify(value)}</span>
+                    </div>
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+        </div>
       ) : (
-        <p style={{ color: "red" }}>Empty Tuple</p>
+        <p className="text-red-500">Empty Tuple</p>
       )}
     </div>
   );
